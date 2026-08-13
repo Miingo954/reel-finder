@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Search movies, series, and episodes with OMDb." />
+    <title>Reel Finder | Find your next watch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Reel Finder home"><span class="brand-mark">R</span> REEL FINDER</a>
+      <span class="header-note">POWERED BY OMDb</span>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="eyebrow">YOUR NEXT OBSESSION IS OUT THERE</p>
+        <h1>Find something<br /><em>great</em> to watch.</h1>
+        <p class="intro">Search a huge catalog of movies and series in seconds.</p>
+
+        <form class="search-panel" id="search-form">
+          <label class="search-field" for="movie-search">
+            <span class="sr-only">Search for a title</span>
+            <span class="search-icon">⌕</span>
+            <input id="movie-search" name="query" type="search" placeholder="Try “The Dark Knight”" autocomplete="off" required />
+          </label>
+          <div class="search-options">
+            <label for="type-filter">Looking for</label>
+            <select id="type-filter" name="type">
+              <option value="">Anything</option>
+              <option value="movie">Movies</option>
+              <option value="series">Series</option>
+              <option value="episode">Episodes</option>
+            </select>
+            <button type="submit">Search <span>→</span></button>
+          </div>
+        </form>
+
+        <div class="quick-searches" aria-label="Quick searches">
+          <span>TRY ONE:</span>
+          <button type="button" data-query="Interstellar">Interstellar</button>
+          <button type="button" data-query="The Bear">The Bear</button>
+          <button type="button" data-query="Spirited Away">Spirited Away</button>
+        </div>
+      </section>
+
+      <section class="results-section" aria-live="polite">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">BROWSE THE CATALOG</p>
+            <h2 id="results-title">Popular searches</h2>
+          </div>
+          <p class="results-count" id="results-count">Start with a title above</p>
+        </div>
+        <div class="status-message" id="status-message">What are you in the mood for?</div>
+        <div class="movie-grid" id="movie-grid"></div>
+      </section>
+    </main>
+
+    <template id="movie-card-template">
+      <article class="movie-card">
+        <div class="poster-wrap"><img class="poster" alt="" loading="lazy" /><span class="type-tag"></span></div>
+        <div class="card-copy"><p class="movie-year"></p><h3 class="movie-title"></h3><button class="details-button" type="button">View details <span>↗</span></button></div>
+      </article>
+    </template>
+
+    <dialog id="movie-dialog" class="movie-dialog">
+      <button class="close-dialog" aria-label="Close details">×</button>
+      <div id="dialog-content"></div>
+    </dialog>
+
+    <footer>Reel Finder uses the <a href="https://www.omdbapi.com/" target="_blank" rel="noreferrer">OMDb API</a> for movie data.</footer>
+    <script src="app.js"></script>
+  </body>
+</html>
