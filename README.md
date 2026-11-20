@@ -1,20 +1,37 @@
 # Reel Finder
 
-A small, no-build movie and series finder powered by the OMDb API.
+A movie and series search application powered by the OMDb API.
 
-## Open it
+## Features
 
-Open this folder in VS Code, then either:
+- Title search and type filtering
+- Live OMDb results
+- Movie detail dialog
+- Poster fallbacks
+- Loading, empty, and error states
+- Responsive results grid
 
-- install the **Live Server** extension and choose **Go Live**, or
-- open `index.html` directly in a browser.
+## Built With
 
-The supplied OMDb key is already in `app.js`, so searches work without further setup. The app searches by title, filters by type, and opens a detail view for each result.
+- HTML
+- CSS
+- JavaScript
+- OMDb API
 
-## Files
+## Requirements
 
-- `index.html` — structure and content
-- `styles.css` — responsive visual design
-- `app.js` — OMDb requests and interactions
+No Node.js installation is required.
 
-For a deployed production site, move the API key into a server-side proxy so it is not exposed in browser source.
+## Run Locally
+
+Clone the repository and open `index.html` in your browser:
+
+```bash
+git clone https://github.com/Miingo954/reel-finder.git
+cd reel-finder
+open index.html
+```
+
+## Author
+
+Jamal Ferguson — front-end developer based in Northern California.
